@@ -37,10 +37,12 @@ function addImage (image){
 
 async function fetchFruit(fruit){
     try{
-        const resp = await fetch(`https://fruit-api-5v0j.onrender.com/fruits/${fruit}`)
+        const resp = await fetch(`https://fruit-api-z2ff.onrender.com/fruits/${fruit}`)
         if(resp.ok){
             const data = await resp.json();
-            addFruit(data)
+            
+            console.log(data[0]);
+            addFruit(data[0])
         }else {
             throw `Error: http status code = ${resp.status}`
         }
